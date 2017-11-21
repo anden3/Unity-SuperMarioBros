@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: b3db26f96803f4a10bba7e06e6c0f647
-timeCreated: 1511256180
+guid: 7afb5a49da13e4e48b4908e770ff4a6e
+timeCreated: 1511267043
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Blocks_0
-    21300002: Blocks_1
-    21300004: Blocks_2
-    21300006: Blocks_3
-    21300008: Blocks_4
-    21300010: Blocks_5
+    21300000: Tiles_0
+    21300002: Tiles_1
+    21300004: Tiles_2
+    21300006: Tiles_3
+    21300008: Tiles_4
+    21300010: Tiles_5
+    21300012: Tiles_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,7 +85,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blocks_0
+      name: Tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tiles_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tiles_3
       rect:
         serializedVersion: 2
         x: 0
@@ -98,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_1
+      name: Tiles_4
       rect:
         serializedVersion: 2
         x: 16
@@ -112,7 +155,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_2
+      name: Tiles_5
       rect:
         serializedVersion: 2
         x: 32
@@ -126,38 +169,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_3
+      name: Tiles_6
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Blocks_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Blocks_5
-      rect:
-        serializedVersion: 2
-        x: 80
         y: 0
         width: 16
         height: 16
