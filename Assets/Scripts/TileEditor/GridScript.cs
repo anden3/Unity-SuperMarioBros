@@ -6,10 +6,10 @@ public class GridScript : MonoBehaviour {
     public int width = 16;
     public int height = 16;
 
+    public bool draggable = true;
+
     public Color color = Color.white;
-
     public Transform tilePrefab;
-
     public TileSet tileSet;
 
     void OnDrawGizmos() {
