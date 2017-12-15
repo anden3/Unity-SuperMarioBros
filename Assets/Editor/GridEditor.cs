@@ -55,7 +55,7 @@ public class GridEditor : Editor {
 
         // Tile Prefab
         EditorGUI.BeginChangeCheck();
-        Transform newTilePrefab = (Transform)EditorGUILayout.ObjectField("Tile Prefab", grid.tilePrefab, typeof(Transform), false);
+        GameObject newTilePrefab = (GameObject)EditorGUILayout.ObjectField("Tile Prefab", grid.tilePrefab, typeof(Transform), false);
 
         if (EditorGUI.EndChangeCheck()) {
             grid.tilePrefab = newTilePrefab;
@@ -73,12 +73,12 @@ public class GridEditor : Editor {
         if (grid.tileSet != null) {
             EditorGUI.BeginChangeCheck();
 
-            string[] names = new string[grid.tileSet.prefabs.Length];
-            int[] values = new int[grid.tileSet.prefabs.Length];
+            string[] names = new string[grid.tileSet.tiles.Count];
+            int[] values = new int[grid.tileSet.tiles.Count];
 
             for (int i = 0; i < names.Length; i++) {
-                Transform prefab = grid.tileSet.prefabs[i];
-                names[i] = (prefab != null) ? prefab.name : "";
+                GameObject tile = grid.tileSet.tiles[i];
+                names[i] = (tile != null) ? tile.name : "";
                 values[i] = i;
             }
 
@@ -133,7 +133,7 @@ public class GridEditor : Editor {
                     return;
                 }
 
-                Transform prefab = grid.tilePrefab;
+                GameObject prefab = grid.tilePrefab;
 
                 if (hit.collider != null) {
                     // Don't replace tile if it's the same type.
@@ -172,12 +172,12 @@ public class GridEditor : Editor {
             return;
         }
 
-        if (tileIndex >= grid.tileSet.prefabs.Length) {
+        if (tileIndex >= grid.tileSet.tiles.Count) {
             return;
         }
 
         selectedTile = tileIndex;
-        grid.tilePrefab = grid.tileSet.prefabs[tileIndex];
+        grid.tilePrefab = grid.tileSet.tiles[tileIndex];
 
         // Update grid to match tile size.
         Vector2 tileSize = grid.tilePrefab.GetComponent<Renderer>().bounds.size;

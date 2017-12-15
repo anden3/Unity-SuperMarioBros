@@ -9,7 +9,7 @@ public class GridScript : MonoBehaviour {
     public bool draggable = true;
 
     public Color color = Color.white;
-    public Transform tilePrefab;
+    public GameObject tilePrefab;
     public TileSet tileSet;
 
     void OnDrawGizmos() {
