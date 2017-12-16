@@ -7,10 +7,11 @@ using UnityEditor;
 public class TileSetEditor : Editor {
     TileSet tileSet;
 
+    private const int TILES_PER_ROW = 9;
+
     private int selectedTile;
     private GUIStyle gridStyle;
 
-    private int tilesPerRow = 9;
     private float tileSize;
 
     private Dictionary<string, Texture> tileTextures = new Dictionary<string, Texture>();
@@ -20,7 +21,7 @@ public class TileSetEditor : Editor {
     }
 
     public override void OnInspectorGUI() {
-        tileSize = EditorGUIUtility.currentViewWidth / tilesPerRow;
+        tileSize = EditorGUIUtility.currentViewWidth / TILES_PER_ROW;
 
         CheckForDroppedTiles();
         CreateTileGrid();
@@ -60,11 +61,11 @@ public class TileSetEditor : Editor {
     private void CreateTileGrid() {
         int indexToDelete = -1;
 
-        for (int row = 0; row < Mathf.CeilToInt((float)tileSet.tiles.Count / (tilesPerRow - 1)); row++) {
+        for (int row = 0; row < Mathf.CeilToInt((float)tileSet.tiles.Count / (TILES_PER_ROW - 1)); row++) {
             EditorGUILayout.BeginHorizontal();
 
-            for (int column = 0; column < (tilesPerRow - 1); column++) {
-                int index = row * (tilesPerRow - 1) + column;
+            for (int column = 0; column < (TILES_PER_ROW - 1); column++) {
+                int index = row * (TILES_PER_ROW - 1) + column;
 
                 if (index >= tileSet.tiles.Count) {
                     break;

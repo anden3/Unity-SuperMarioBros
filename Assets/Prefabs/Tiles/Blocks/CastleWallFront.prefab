@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212730582162593458}
   - component: {fileID: 61613069371369258}
   m_Layer: 8
-  m_Name: BlockCastleWallFront
+  m_Name: CastleWallFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

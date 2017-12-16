@@ -30200,7 +30200,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1629187812}
-  - component: {fileID: 1629187811}
   - component: {fileID: 1629187813}
   m_Layer: 0
   m_Name: Background
@@ -30209,50 +30208,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1629187811
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1629187810}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -198359903
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5087c7805e6464946a5cfde6692f12f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.275}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 33.92, y: 2.2399998}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!4 &1629187812
 Transform:
   m_ObjectHideFlags: 0
@@ -31113,8 +31068,8 @@ MonoBehaviour:
   width: 1
   height: 1
   draggable: 0
-  color: {r: 0.06660901, g: 0.8235294, b: 0.2597541, a: 1}
-  tilePrefab: {fileID: 1000671077788766, guid: 8421ab3404cd95a439e999af1cdd5b39, type: 2}
+  color: {r: 0.06660901, g: 0.8235294, b: 0.2597541, a: 0.3137255}
+  tilePrefab: {fileID: 1353851471828892, guid: 4fb997bec911da549829c0a9c5531038, type: 2}
   tileSet: {fileID: 11400000, guid: 8b595da38921bac43a298ce890e84e71, type: 2}
 --- !u!1001 &1638273875
 Prefab:

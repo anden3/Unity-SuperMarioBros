@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1635255581150852}
+  m_RootGameObject: {fileID: 1000671077788766}
   m_IsPrefabParent: 1
---- !u!1 &1635255581150852
+--- !u!1 &1000671077788766
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4625825824189792}
-  - component: {fileID: 212362626273733462}
-  - component: {fileID: 61576126585184290}
+  - component: {fileID: 4245464884436028}
+  - component: {fileID: 212125811326768832}
+  - component: {fileID: 61592987395209708}
   m_Layer: 10
-  m_Name: BackgroundCloudTopRight
+  m_Name: HillMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4625825824189792
+--- !u!4 &4245464884436028
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635255581150852}
+  m_GameObject: {fileID: 1000671077788766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,12 +41,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61576126585184290
+--- !u!61 &61592987395209708
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635255581150852}
+  m_GameObject: {fileID: 1000671077788766}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -66,12 +66,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!212 &212362626273733462
+--- !u!212 &212125811326768832
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635255581150852}
+  m_GameObject: {fileID: 1000671077788766}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_SortingLayerID: -198359903
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300012, guid: bb58c5c466935c24790eaea07fb9a618, type: 3}
+  m_Sprite: {fileID: 21300004, guid: bb58c5c466935c24790eaea07fb9a618, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
