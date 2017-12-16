@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4701893996989522}
   - component: {fileID: 212179621980286828}
   - component: {fileID: 61876014708871514}
+  - component: {fileID: 251316556850214628}
   m_Layer: 8
   m_Name: BlockBricks
   m_TagString: Untagged
@@ -110,3 +111,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!251 &251316556850214628
+PlatformEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480207357117576}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 180

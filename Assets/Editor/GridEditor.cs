@@ -73,6 +73,8 @@ public class GridEditor : Editor {
         if (grid.tileSet != null) {
             EditorGUI.BeginChangeCheck();
 
+            grid.tileSet.tiles.Sort((x, y) => x.name.CompareTo(y.name));
+
             string[] names = new string[grid.tileSet.tiles.Count];
             int[] values = new int[grid.tileSet.tiles.Count];
 
@@ -80,6 +82,10 @@ public class GridEditor : Editor {
                 GameObject tile = grid.tileSet.tiles[i];
                 names[i] = (tile != null) ? tile.name : "";
                 values[i] = i;
+
+                if (tile == grid.tilePrefab) {
+                    selectedTile = i;
+                }
             }
 
             int newSelectedTile = EditorGUILayout.IntPopup("Select Tile", selectedTile, names, values);

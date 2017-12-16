@@ -1,21 +1,21 @@
 fileFormatVersion: 2
 guid: b3db26f96803f4a10bba7e06e6c0f647
-timeCreated: 1513341186
+timeCreated: 1513437611
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Blocks_0
-    21300002: Blocks_1
-    21300004: Blocks_2
-    21300006: Blocks_3
-    21300008: Blocks_4
-    21300010: Blocks_5
-    21300012: Blocks_6
-    21300014: Blocks_7
-    21300016: Blocks_8
-    21300018: Blocks_9
-    21300020: Blocks_10
-    21300022: Blocks_11
+    21300000: Lootbox1
+    21300002: Lootbox2
+    21300004: Lootbox3
+    21300006: LootboxOff
+    21300008: Bricks
+    21300010: Solid
+    21300012: Ground
+    21300014: CastleDoorwayBottom
+    21300016: CastleDoorwayTop
+    21300018: CastleWallSolid
+    21300020: CastleWall
+    21300022: CastleBalcony
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -34,7 +34,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -90,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blocks_0
+      name: Lootbox1
       rect:
         serializedVersion: 2
         x: 0
@@ -98,13 +98,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_1
+      name: Lootbox2
       rect:
         serializedVersion: 2
         x: 16
@@ -112,13 +112,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_2
+      name: Lootbox3
       rect:
         serializedVersion: 2
         x: 32
@@ -126,13 +126,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_3
+      name: LootboxOff
       rect:
         serializedVersion: 2
         x: 48
@@ -140,13 +140,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_4
+      name: Bricks
       rect:
         serializedVersion: 2
         x: 64
@@ -154,13 +154,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_5
+      name: Solid
       rect:
         serializedVersion: 2
         x: 80
@@ -168,13 +168,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_6
+      name: Ground
       rect:
         serializedVersion: 2
         x: 0
@@ -182,13 +182,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_7
+      name: CastleDoorwayBottom
       rect:
         serializedVersion: 2
         x: 16
@@ -196,13 +196,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_8
+      name: CastleDoorwayTop
       rect:
         serializedVersion: 2
         x: 32
@@ -210,13 +210,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_9
+      name: CastleWallSolid
       rect:
         serializedVersion: 2
         x: 48
@@ -224,13 +224,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_10
+      name: CastleWall
       rect:
         serializedVersion: 2
         x: 64
@@ -238,13 +238,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Blocks_11
+      name: CastleBalcony
       rect:
         serializedVersion: 2
         x: 80
@@ -252,7 +252,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

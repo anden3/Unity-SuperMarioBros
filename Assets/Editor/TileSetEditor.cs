@@ -10,7 +10,7 @@ public class TileSetEditor : Editor {
     private int selectedTile;
     private GUIStyle gridStyle;
 
-    private int tilesPerRow = 10;
+    private int tilesPerRow = 9;
     private float tileSize;
 
     private Dictionary<string, Texture> tileTextures = new Dictionary<string, Texture>();
@@ -60,11 +60,11 @@ public class TileSetEditor : Editor {
     private void CreateTileGrid() {
         int indexToDelete = -1;
 
-        for (int row = 0; row < Mathf.CeilToInt((float)tileSet.tiles.Count / tilesPerRow); row++) {
+        for (int row = 0; row < Mathf.CeilToInt((float)tileSet.tiles.Count / (tilesPerRow - 1)); row++) {
             EditorGUILayout.BeginHorizontal();
 
-            for (int column = 0; column < tilesPerRow; column++) {
-                int index = row * tilesPerRow + column;
+            for (int column = 0; column < (tilesPerRow - 1); column++) {
+                int index = row * (tilesPerRow - 1) + column;
 
                 if (index >= tileSet.tiles.Count) {
                     break;
