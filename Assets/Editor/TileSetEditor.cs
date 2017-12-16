@@ -11,14 +11,16 @@ public class TileSetEditor : Editor {
     private GUIStyle gridStyle;
 
     private int tilesPerRow = 10;
-    private float tileWidth;
+    private float tileSize;
+
+    private Dictionary<string, Texture> tileTextures = new Dictionary<string, Texture>();
 
     private void OnEnable() {
         tileSet = (TileSet)target;
     }
 
     public override void OnInspectorGUI() {
-        tileWidth = EditorGUIUtility.currentViewWidth / tilesPerRow;
+        tileSize = EditorGUIUtility.currentViewWidth / tilesPerRow;
 
         CheckForDroppedTiles();
         CreateTileGrid();
@@ -43,13 +45,10 @@ public class TileSetEditor : Editor {
 
                 if (allObjectsOk && e.type == EventType.DragPerform) {
                     DragAndDrop.AcceptDrag();
-
                     Undo.RecordObject(tileSet, "Tileset Changed");
                     
                     foreach (GameObject obj in DragAndDrop.objectReferences) {
-                        if (!tileSet.tiles.Contains(obj)) {
-                            tileSet.tiles.Add(obj);
-                        }
+                        AddTile(obj);
                     }
                 }
 
@@ -59,19 +58,37 @@ public class TileSetEditor : Editor {
     }
 
     private void CreateTileGrid() {
-        Texture[] tileTextures = new Texture[tileSet.tiles.Count];
+        int indexToDelete = -1;
 
-        for (int i = 0; i < tileSet.tiles.Count; i++) {
-            tileTextures[i] = AssetPreview.GetAssetPreview(tileSet.tiles[i]);
+        for (int row = 0; row < Mathf.CeilToInt((float)tileSet.tiles.Count / tilesPerRow); row++) {
+            EditorGUILayout.BeginHorizontal();
+
+            for (int column = 0; column < tilesPerRow; column++) {
+                int index = row * tilesPerRow + column;
+
+                if (index >= tileSet.tiles.Count) {
+                    break;
+                }
+
+                GameObject tile = tileSet.tiles[index];
+
+                bool isPressed = GUILayout.Button(
+                    new GUIContent(GetTexture(tile), tile.name), 
+                    GUILayout.Width(tileSize), GUILayout.Height(tileSize)
+                );
+
+                if (isPressed) {
+                    indexToDelete = index;
+                }
+            }
+
+            EditorGUILayout.EndHorizontal();
         }
 
-        EditorGUILayout.BeginVertical();
-
-        selectedTile = GUILayout.SelectionGrid(
-            selectedTile, tileTextures, tilesPerRow, GUI.skin.button, GUILayout.Height(tileWidth)
-        );
-
-        EditorGUILayout.EndVertical();
+        if (indexToDelete > -1) {
+            Undo.RecordObject(tileSet, "Tileset Changed");
+            RemoveTile(tileSet.tiles[indexToDelete]);
+        }
     }
 
     private bool IsObjectValid(Object obj) {
@@ -80,5 +97,46 @@ public class TileSetEditor : Editor {
         }
 
         return ((GameObject)obj).GetComponent<SpriteRenderer>() != null;
+    }
+
+    private Texture GetTexture(GameObject tile) {
+        if (!tileTextures.ContainsKey(tile.name)) {
+            StoreTexture(tile);
+        }
+
+        return tileTextures[tile.name];
+    }
+
+    private void AddTile(GameObject tile) {
+        if (tileSet.tiles.Contains(tile)) {
+            return;
+        }
+
+        tileSet.tiles.Add(tile);
+        StoreTexture(tile);
+
+        // Sort list alphabetically.
+        tileSet.tiles.Sort((x, y) => x.name.CompareTo(y.name));
+    }
+
+    private void RemoveTile(GameObject tile) {
+        if (!tileSet.tiles.Contains(tile)) {
+            return;
+        }
+
+        tileSet.tiles.Remove(tile);
+        tileTextures.Remove(tile.name);
+    }
+
+    private void StoreTexture(GameObject tile) {
+        Texture2D preview = AssetPreview.GetAssetPreview(tile);
+        Debug.Assert(preview != null);
+
+        if (tileTextures.ContainsKey(tile.name)) {
+            tileTextures.Remove(tile.name);
+        }
+
+        tileTextures.Add(tile.name, new Texture2D(preview.width, preview.height, TextureFormat.RGB24, false));
+        Graphics.CopyTexture(preview, tileTextures[tile.name]);
     }
 }
