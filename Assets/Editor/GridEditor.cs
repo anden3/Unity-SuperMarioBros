@@ -58,16 +58,6 @@ public class GridEditor : Editor {
         grid.color = EditorGUILayout.ColorField(grid.color);
         GUILayout.EndHorizontal();
 
-        // Tile Prefab
-        /*
-        EditorGUI.BeginChangeCheck();
-        GameObject newTilePrefab = (GameObject)EditorGUILayout.ObjectField("Tile Prefab", grid.tilePrefab, typeof(Transform), false);
-
-        if (EditorGUI.EndChangeCheck()) {
-            grid.tilePrefab = newTilePrefab;
-        }
-        */
-
         // Draggable
         EditorGUI.BeginChangeCheck();
         bool draggable = EditorGUILayout.Toggle("Toggle Dragging", grid.draggable);
@@ -84,52 +74,7 @@ public class GridEditor : Editor {
             grid.tileSet = newTileSet;
         }
 
-        // Tile List
-        /*
-        if (grid.tileSet != null) {
-            EditorGUI.BeginChangeCheck();
-
-            grid.tileSet.tiles.Sort((x, y) => x.name.CompareTo(y.name));
-
-            string[] names = new string[grid.tileSet.tiles.Count];
-            int[] values = new int[grid.tileSet.tiles.Count];
-
-            for (int i = 0; i < names.Length; i++) {
-                GameObject tile = grid.tileSet.tiles[i];
-                names[i] = (tile != null) ? tile.name : "";
-                values[i] = i;
-
-                if (tile == grid.tilePrefab) {
-                    selectedTile = i;
-                }
-            }
-
-            int newSelectedTile = EditorGUILayout.IntPopup("Select Tile", selectedTile, names, values);
-
-            if (EditorGUI.EndChangeCheck()) {
-                SelectTile(newSelectedTile);
-            }
-        }
-        */
-
-        /*
-        Texture[] tileTextures = new Texture[grid.tileSet.tiles.Count];
-
-        for (int i = 0; i < grid.tileSet.tiles.Count; i++) {
-            GameObject tile = grid.tileSet.tiles[i];
-            tileTextures[i] = AssetPreview.GetAssetPreview(tile);
-
-            if (tile == grid.tilePrefab) {
-                selectedTile = i;
-            }
-        }
-
-        selectedTile = GUILayout.SelectionGrid(
-            selectedTile, tileTextures, TILES_PER_ROW, GUI.skin.button,
-            GUILayout.Width(tileSize * TILES_PER_ROW)
-        );
-        */
-
+        // Tile Grid
         for (int row = 0; row < Mathf.CeilToInt((float)grid.tileSet.tiles.Count / (TILES_PER_ROW - 1)); row++) {
             EditorGUILayout.BeginHorizontal();
 

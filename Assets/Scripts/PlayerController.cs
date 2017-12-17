@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     [Header("Movement settings")]
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour {
             anim.SetBool("IsJumping", true);
             jump = true;
         }
-        else if (Input.GetButtonUp("Jump") && !onGround) {
+        else if (!onGround && (Input.GetButtonUp("Jump") || rb.velocity.y <= 0)) {
             jumpCancel = true;
         }
 
@@ -165,6 +166,7 @@ public class PlayerController : MonoBehaviour {
             yield return null;
         }
 
-        Application.Quit();
+        SceneManager.LoadScene("Main");
+        // Application.Quit();
     }
 }
