@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4318964050706692}
   - component: {fileID: 212225581705368754}
   - component: {fileID: 61131834330932530}
+  - component: {fileID: 251316143896341166}
   - component: {fileID: 95744729143166340}
   - component: {fileID: 114976328013597848}
-  - component: {fileID: 251316143896341166}
   m_Layer: 8
   m_Name: Lootbox
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
