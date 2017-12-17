@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7afb5a49da13e4e48b4908e770ff4a6e
-timeCreated: 1513437689
+timeCreated: 1513523691
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,7 @@ TextureImporter:
     21300008: PipeBottomRight
     21300010: PipeTopLeft
     21300012: PipeTopRight
+    21300014: DeathZone
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -178,6 +179,20 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DeathZone
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
