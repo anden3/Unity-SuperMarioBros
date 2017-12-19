@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Reflection;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,20 @@ public class Lootbox : MonoBehaviour {
         }
 
         ContactPoint2D[] contacts = new ContactPoint2D[5];
-        int count = col.GetContacts(contacts);
+        int count;
+
+        MethodInfo method = typeof(Collision2D).GetMethod("GetContacts");
+
+        // Check if method exists.
+        // This has to be done because Collision2D.GetContacts() exists in a newer version of Unity, but not in the version on the school computers.
+        if (method != null) {
+            count = (int)method.Invoke(col, new object[] { contacts });
+        }
+        else {
+            PropertyInfo property = typeof(Collision2D).GetProperty("contacts");
+            contacts = (ContactPoint2D[])property.GetValue(col, null);
+            count = contacts.Length;
+        }
 
         for (int i = 0; i < count; i++) {
             // Check if hit came from underneath.

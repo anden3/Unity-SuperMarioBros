@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Threading;
 
 [CustomEditor(typeof(TileSet))]
 public class TileSetEditor : Editor {
@@ -130,14 +131,18 @@ public class TileSetEditor : Editor {
     }
 
     private void StoreTexture(GameObject tile) {
-        Texture2D preview = AssetPreview.GetAssetPreview(tile);
-        Debug.Assert(preview != null);
+        Texture2D preview;
+
+        // Wait for the texture to be generated.
+        while ((preview = AssetPreview.GetAssetPreview(tile)) == null) {
+            Thread.Sleep(100);
+        }
 
         if (tileTextures.ContainsKey(tile.name)) {
             tileTextures.Remove(tile.name);
         }
 
-        tileTextures.Add(tile.name, new Texture2D(preview.width, preview.height, TextureFormat.RGB24, false));
+        tileTextures.Add(tile.name, new Texture2D(preview.width, preview.height, preview.format, false));
         Graphics.CopyTexture(preview, tileTextures[tile.name]);
     }
 }
